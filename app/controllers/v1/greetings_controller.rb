@@ -1,11 +1,10 @@
 class V1::GreetingsController < ApplicationController
   def index
     message = Greeting.find(rand(1..5)).greeting
-    render json: { :greetings => [
+    render json: { greetings: [
       {
-        :message => message
+        message: message
       }
-    ]
-  }.to_json
+    ] }.to_json
   end
 end
